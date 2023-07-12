@@ -17,7 +17,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);
-    TabItem tabChat = findViewById(R.id.chat), tabStatus = findViewById(R.id.status), tabCalls = findViewById(R.id.calls);
-    ViewPager viewPager = findViewById(R.id.viewPager);
+        TabItem tabChat = findViewById(R.id.chat),
+                tabStatus = findViewById(R.id.status),
+                tabCalls = findViewById(R.id.calls);
+        ViewPager viewPager = findViewById(R.id.viewPager);
+
+        MyPagerAdapter pagerAdapter = new MyPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(pagerAdapter);
     }
 }
